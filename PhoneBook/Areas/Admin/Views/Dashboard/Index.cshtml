@@ -1,0 +1,189 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="flex-grow-1">
+                            <p class="text-truncate font-size-14 mb-2">Total Confirmed Bookings</p>
+                            <h4 class="mb-2">14</h4>
+                        </div>
+                        <div class="avatar-sm">
+                            <span class="avatar-title bg-light text-primary rounded-3">
+                                <i class="ri-shopping-cart-2-line font-size-24"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div><!-- end cardbody -->
+            </div><!-- end card -->
+        </div><!-- end col -->
+        <div class="col-2">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="flex-grow-1">
+                            <p class="text-truncate font-size-14 mb-2">New Booking</p>
+                            <h4 class="mb-2">10</h4>
+                        </div>
+                        <div class="avatar-sm">
+                            <span class="avatar-title bg-light text-success rounded-3">
+                                <i class="mdi mdi-currency-usd font-size-24"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div><!-- end cardbody -->
+            </div><!-- end card -->
+        </div><!-- end col -->
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="flex-grow-1">
+                            <p class="text-truncate font-size-14 mb-2">Users</p>
+                            <h4 class="mb-2">15</h4>
+                        </div>
+                        <div class="avatar-sm">
+                            <span class="avatar-title bg-light text-primary rounded-3">
+                                <i class="ri-user-3-line font-size-24"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div><!-- end cardbody -->
+            </div><!-- end card -->
+        </div><!-- end col -->
+        <div class="col-2">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="flex-grow-1">
+                            <p class="text-truncate font-size-14 mb-2">All Companies</p>
+                            <h4 class="mb-2">15</h4>
+                        </div>
+                        <div class="avatar-sm">
+                            <span class="avatar-title bg-light text-success rounded-3">
+                                <i class="mdi mdi-currency-btc font-size-24"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div><!-- end cardbody -->
+            </div><!-- end card -->
+        </div><!-- end col -->
+        <div class="col-2 ">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="flex-grow-1">
+                            <p class="text-truncate font-size-14 mb-2">All Cars</p>
+                            <h4 class="mb-2">5</h4>
+                        </div>
+                        <div class="avatar-sm">
+                            <span class="avatar-title bg-light text-success rounded-3">
+                                <i class="mdi mdi-currency-btc font-size-24"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div><!-- end cardbody -->
+            </div><!-- end card -->
+        </div><!-- end col -->
+    </div><!-- end row -->
+
+
+    <div class="row">
+        <div class="col-xl-12">
+            <div class="card">
+                <div class="card-body">
+
+
+                    <h4 class="card-title mb-4">Latest Booking</h4>
+
+                    <div class="table-responsive">
+                        <table class="table table-centered mb-0 align-middle table-hover table-nowrap">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Car model</th>
+                                    <th>Status</th>
+                                    <th>PickUp date</th>
+                                    <th>DropOut date</th>
+                                    <th style="width: 120px;">Total price</th>
+                                </tr>
+                            </thead><!-- end thead -->
+                            <tbody>
+
+                                @* @foreach (Person item in Enumerable.Range(1,10))
+                                {
+                                <tr>
+                                <td><h6 class="mb-0">@item.FirstName @item.LastName</h6></td>
+
+                                <td>
+                                <div class="font-size-13"><i class="ri-checkbox-blank-circle-fill font-size-10
+                                text-@(!item.IsDeleted ? "warning":"success") align-middle
+                                me-2"></i>@item.IsDeleted</div>
+                                </td>
+                                <td>
+                                @item.InternalNumber.ToString()
+                                </td>
+                                <td>
+                                @item.PhoneNumber.ToString()
+                                </td>
+                                <td>@item.Address</td>
+                                </tr>
+                                <!-- end -->
+                                } *@
+
+                            </tbody><!-- end tbody -->
+                        </table> <!-- end table -->
+                    </div>
+                </div><!-- end card -->
+            </div><!-- end card -->
+        </div>
+        <!-- end col -->
+
+    </div>
+
+    <div class="row">
+        <div class="col-xl-4">
+            <div class="card">
+                <div class="card-body">
+
+                    <h4 class="card-title mb-4">Monthly Earnings</h4>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="text-center mt-4">
+                                <h5>3475</h5>
+                                <p class="mb-2 text-truncate">Market Place</p>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-4">
+                            <div class="text-center mt-4">
+                                <h5>458</h5>
+                                <p class="mb-2 text-truncate">Last Week</p>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-4">
+                            <div class="text-center mt-4">
+                                <h5>9062</h5>
+                                <p class="mb-2 text-truncate">Last Month</p>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="mt-4">
+                        <div id="donut-chart" class="apex-charts"></div>
+                    </div>
+                </div>
+            </div><!-- end card -->
+        </div><!-- end col -->
+    </div>
+    <!-- end row -->
+</div>

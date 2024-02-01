@@ -1,0 +1,129 @@
+﻿@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model PersonUpdateVM ;
+
+<div class="container mt-3">
+
+    <div>
+        <a asp-action="Index" asp-controller="PhoneManage" class="btn btn-primary waves-effect waves-light">
+            <i class="mdi mdi-keyboard-backspace"></i> Geriyə
+        </a>
+    </div>
+    <hr>
+    <div class="card-box">
+
+        <form class="form-horizontal group-border-dashed" asp-action="update" asp-controller="PhoneManage" method="post"
+            enctype="multipart/form-data" novalidate="">
+
+            <div class="form-group row my-2">
+                <label asp-for="FirstName" class="col-sm-2 col-form-label">Ad</label>
+                <div class="col-sm-6">
+                    <input asp-for="FirstName" type="text" class="form-control" required="" placeholder="Ad">
+                    <span asp-validation-for="FirstName" class="d-md-flex justify-content-md-center text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row my-2">
+                <label asp-for="LastName" class="col-sm-2 col-form-label">Soyad</label>
+                <div class="col-sm-6">
+                    <input asp-for="LastName" type="text" class="form-control" required="" placeholder="Soyad">
+                    <span asp-validation-for="LastName" class="d-md-flex justify-content-md-center text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row my-2">
+                <label asp-for="FatherName" class="col-sm-2 col-form-label">Ata adı</label>
+                <div class="col-sm-6">
+                    <input asp-for="FatherName" type="text" class="form-control" required="" placeholder="Ata adı">
+                    <span asp-validation-for="FatherName"
+                        class="d-md-flex justify-content-md-center text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row my-2">
+                <label asp-for="PhoneNumber" class="col-sm-2 col-form-label">Şəxsi nömrə</label>
+                <div class="col-sm-6">
+                    <input asp-for="PhoneNumber" type="text" class="form-control" required="" placeholder="Şəxsi nömrə">
+                    <span asp-validation-for="PhoneNumber"
+                        class="d-md-flex justify-content-md-center text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row my-2">
+                <label asp-for="InternalNumber" class="col-sm-2 col-form-label">Daxili nömrə</label>
+                <div class="col-sm-6">
+                    <input asp-for="InternalNumber" type="text" class="form-control" required=""
+                        placeholder="Daxili nömrə">
+                    <span asp-validation-for="InternalNumber"
+                        class="d-md-flex justify-content-md-center text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row my-2">
+                <label asp-for="Email" class="col-sm-2 col-form-label">Email adresi</label>
+                <div class="col-sm-6">
+                    <input asp-for="Email" type="text" class="form-control" placeholder="Email adresi">
+                    <span asp-validation-for="Email" class="d-md-flex justify-content-md-center text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row my-2">
+                <label asp-for="Position" class="col-sm-2 col-form-label">Vəzifəsi</label>
+                <div class="col-sm-6">
+                    <input asp-for="Position" type="text" class="form-control" required="" placeholder="Vəzifəsi">
+                    <span asp-validation-for="Position" class="d-md-flex justify-content-md-center text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row my-2">
+                <label asp-for="Address" class="col-sm-2 col-form-label">Yaşadığı ünvan</label>
+                <div class="col-sm-6">
+                    <input asp-for="Address" type="text" class="form-control" required="" placeholder="Yaşadığı ünvan">
+                    <span asp-validation-for="Address" class="d-md-flex justify-content-md-center text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row my-2">
+                <label asp-for="ImageFile" class="col-sm-2 col-form-label">Şəkil</label>
+                <div class="col-sm-4">
+                    <input id="PersonImageInput" asp-for="ImageFile" type="file" class="form-control">
+                    <span asp-validation-for="ImageFile" class="d-md-flex justify-content-md-center text-danger"></span>
+                </div>
+
+
+
+                <div class="d-flex  mt-2 col-sm-2" style="flex-wrap:wrap;">
+
+                    <div style="margin-left:30px; position:relative">
+                        <img id="personImage" style="width:200px;" class="rounded border border-secondary"
+                            src="\Uploads\PersonImages\@Model.ImagePath" />
+
+                        @if (Model.ImagePath != null && Model.ImagePath != "default.jpg")
+                        {
+                            <input class="form-check-input" asp-for="DeletedImage" hidden type="checkbox">
+                            <span id="deleteImageBtn"
+                                style="cursor: pointer;position:absolute;margin-left: 7px;font-weight: 900;font-size: large; cursor:pointer"><i
+                                    class="fas fa-trash-alt"></i></span>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group row my-2">
+                <div class="offset-sm-3 col-sm-9 mt-2">
+                    <button type="submit" class="btn btn-success waves-effect waves-light mr-1">
+                        Submit
+                    </button>
+
+                    <button type="button" id="resetBtn" class="btn btn-danger waves-effect waves-light mr-1">
+                        reset
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

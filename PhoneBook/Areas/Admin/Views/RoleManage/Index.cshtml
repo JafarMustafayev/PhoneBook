@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Role Management";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int counter = 1;
+}
+
+@model List<RoleVM>
+
+<div class="mx-4  ">
+    <div style="display:flex; justify-content:space-between; align-items:center" class="mt-2">
+
+        <div>
+            <h1> Role Management </h1>
+        </div>
+
+
+
+        <div>
+            <a asp-action="Create" asp-controller="RoleManage">
+                <button class=" btn btn-info">
+                    <i class="bi bi-pencil-square"></i>
+                    Create
+                </button>
+            </a>
+        </div>
+    </div>
+    <hr>
+
+    <div class="container">
+
+
+        <table class="table table-hover" style="lighting-color:blue;border:4px;--bs-table-hover-bg: #adb5bd">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Role Name</th>
+
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                @if (Model != null)
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@counter</td>
+                            <td>@item.Name</td>
+
+                            <td>
+                                <a asp-action="Update" asp-controller="RoleManage" asp-route-Id="@item.Id">
+                                    <button class="btn btn-warning">
+                                        <i class="far fa-edit"></i>
+
+                                    </button>
+                                </a>
+                                <a asp-action="delete" asp-controller="RoleManage" asp-route-Id="@item.Id" id="deleteItem">
+                                    <button class="btn btn-danger">
+                                        <i class=" fas fa-trash-alt"></i>
+
+                                    </button>
+                                </a>
+                            </td>
+
+                        </tr>
+
+                        counter++;
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

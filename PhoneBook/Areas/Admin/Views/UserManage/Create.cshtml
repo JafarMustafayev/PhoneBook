@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@model UserCreateVM
+
+<div class="container mt-3">
+
+    <div>
+        <a asp-action="Index" asp-controller="UserManage" class="btn btn-primary waves-effect waves-light">
+            <i class="mdi mdi-keyboard-backspace"></i> Geriyə
+        </a>
+    </div>
+    <hr>
+    <div class="card-box">
+
+        <form class="form-horizontal group-border-dashed" asp-action="Create" asp-controller="UserManage" method="post"
+            enctype="multipart/form-data" novalidate="">
+
+            <div class="form-group row my-2">
+                <label asp-for="FullName" class="col-sm-2 col-form-label">FullName</label>
+                <div class="col-sm-6">
+                    <input asp-for="FullName" type="text" class="form-control" required="" placeholder="FullName">
+                    <span asp-validation-for="FullName" class="d-md-flex justify-content-md-center text-danger"></span>
+                </div>
+            </div>
+
+
+
+            <div class="form-group row my-2">
+                <label asp-for="Username" class="col-sm-2 col-form-label">Username</label>
+                <div class="col-sm-6">
+                    <input asp-for="Username" type="text" class="form-control" required="" placeholder="Username">
+                    <span asp-validation-for="Username" class="d-md-flex justify-content-md-center text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row my-2">
+                <label asp-for="Email" class="col-sm-2 col-form-label">Email</label>
+                <div class="col-sm-6">
+                    <input asp-for="Email" type="text" class="form-control" required="" placeholder="Email">
+                    <span asp-validation-for="Email" class="d-md-flex justify-content-md-center text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row my-2">
+                <label asp-for="Password" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-6">
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Password">
+                    <span asp-validation-for="Password" class="d-md-flex justify-content-md-center text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group row my-2">
+                <label asp-for="ConfirmPassword" class="col-sm-2 col-form-label">ConfirmPassword</label>
+                <div class="col-sm-6">
+                    <input asp-for="ConfirmPassword" type="password" class="form-control" required=""
+                        placeholder="ConfirmPassword">
+                    <span asp-validation-for="ConfirmPassword"
+                        class="d-md-flex justify-content-md-center text-danger"></span>
+                </div>
+            </div>
+
+            <div asp-validation-summary="ModelOnly"></div>
+
+
+
+            <div class="form-group row my-2">
+                <div class="offset-sm-3 col-sm-9 mt-2">
+                    <button type="submit" class="btn btn-success waves-effect waves-light mr-1">
+                        Submit
+                    </button>
+                    <button type="reset" class="btn btn-danger waves-effect">
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>

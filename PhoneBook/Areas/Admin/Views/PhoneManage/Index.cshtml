@@ -1,0 +1,92 @@
+﻿@{
+    ViewData["Title"] = "Phone Management";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int counter = 1;
+}
+
+@model List<PersonHomeVM>
+
+<div class="mx-4">
+    <div style="display:flex; justify-content:space-between; align-items:center" class="mt-2">
+
+        <div>
+            <h1> PhoneBook Management </h1>
+        </div>
+
+        <div class="col-md-8">
+
+            <div class="search">
+                <form id="searchForm" style="max-width: 80%;" asp-action="Index" asp-controller="PhoneManage">
+
+                    <input id="searchInputForSA" class="form-control me-2" type="search" placeholder="Search"
+                        aria-label="Search">
+
+                </form>
+            </div>
+
+        </div>
+
+        <div>
+            <a asp-action="Create" asp-controller="PhoneManage">
+                <button class=" btn btn-info">
+                    <i class="bi bi-pencil-square"></i>
+                    Create
+                </button>
+            </a>
+        </div>
+    </div>
+    <hr>
+
+    <div>
+
+
+        <table class="table table-hover" style="lighting-color:blue;border:4px;--bs-table-hover-bg: #adb5bd">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Full Name</th>
+                    <th>Phone Number</th>
+                    <th>Internal Number</th>
+                    <th>Email</th>
+                    <th>Unvan</th>
+                    <th>Position</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                @if (Model != null)
+                {
+                    @foreach (PersonHomeVM item in Model)
+                    {
+                        <tr>
+                            <td>@counter</td>
+                            <td>@item.LastName @item.FirstName @item.FatherName</td>
+                            <td>@item.PhoneNumber</td>
+                            <td>@item.InternalNumber</td>
+                            <td>@item.Email</td>
+                            <td>@item.Address</td>
+                            <td>@item.Position</td>
+                            <td>
+                                <a asp-action="Update" asp-controller="PhoneManage" asp-route-Id="@item.Id">
+                                    <button class="btn btn-warning">
+                                        <i class="far fa-edit"></i>
+
+                                    </button>
+                                </a>
+                                <a asp-action="delete" asp-controller="PhoneManage" asp-route-Id="@item.Id" id="deleteItem">
+                                    <button class="btn btn-danger">
+                                        <i class=" fas fa-trash-alt"></i>
+
+                                    </button>
+                                </a>
+                            </td>
+
+                        </tr>
+
+                        counter++;
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

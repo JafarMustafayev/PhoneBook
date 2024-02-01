@@ -1,0 +1,142 @@
+﻿@{
+    ViewData["Title"] = "Phone book";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    int counter = 1;
+}
+@model List<PersonHomeVM>
+
+
+<div id="mainDiv " class="row mx-5">
+
+    <table class="table table-hover"
+        style="lighting-color:blue;border:4px;--bs-table-hover-bg: #adb5bd;--bs-table-bg:#eff3f6">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Soyad Ad Ata</th>
+                <th>Şəxsi nömrə</th>
+                <th>Daxili nömrə</th>
+                <th>Email</th>
+                <th>Unvan</th>
+                <th>Vəzifə</th>
+
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            @if (Model != null)
+            {
+                @foreach (PersonHomeVM item in Model)
+                {
+                    <tr>
+                        <td>@counter</td>
+                        <td>@item.LastName @item.FirstName @item.FatherName</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.InternalNumber</td>
+                        <td>@item.Email</td>
+                        <td>@item.Address</td>
+                        <td>@item.Position</td>
+                    </tr>
+
+                    <tr>
+                        <td>@counter</td>
+                        <td>@item.LastName @item.FirstName @item.FatherName</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.InternalNumber</td>
+                        <td>@item.Email</td>
+                        <td>@item.Address</td>
+                        <td>@item.Position</td>
+                    </tr>
+
+                    <tr>
+                        <td>@counter</td>
+                        <td>@item.LastName @item.FirstName @item.FatherName</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.InternalNumber</td>
+                        <td>@item.Email</td>
+                        <td>@item.Address</td>
+                        <td>@item.Position</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>@counter</td>
+                        <td>@item.LastName @item.FirstName @item.FatherName</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.InternalNumber</td>
+                        <td>@item.Email</td>
+                        <td>@item.Address</td>
+                        <td>@item.Position</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>@counter</td>
+                        <td>@item.LastName @item.FirstName @item.FatherName</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.InternalNumber</td>
+                        <td>@item.Email</td>
+                        <td>@item.Address</td>
+                        <td>@item.Position</td>
+                    </tr>
+
+
+                    <tr>
+                        <td>@counter</td>
+                        <td>@item.LastName @item.FirstName @item.FatherName</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.InternalNumber</td>
+                        <td>@item.Email</td>
+                        <td>@item.Address</td>
+                        <td>@item.Position</td>
+                    </tr>
+
+                    <tr>
+                        <td>@counter</td>
+                        <td>@item.LastName @item.FirstName @item.FatherName</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.InternalNumber</td>
+                        <td>@item.Email</td>
+                        <td>@item.Address</td>
+                        <td>@item.Position</td>
+                    </tr>
+
+                    <tr>
+                        <td>@counter</td>
+                        <td>@item.LastName @item.FirstName @item.FatherName</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.InternalNumber</td>
+                        <td>@item.Email</td>
+                        <td>@item.Address</td>
+                        <td>@item.Position</td>
+                    </tr>
+
+                    <tr>
+                        <td>@counter</td>
+                        <td>@item.LastName @item.FirstName @item.FatherName</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.InternalNumber</td>
+                        <td>@item.Email</td>
+                        <td>@item.Address</td>
+                        <td>@item.Position</td>
+                    </tr>
+
+                    <tr>
+                        <td>@counter</td>
+                        <td>@item.LastName @item.FirstName @item.FatherName</td>
+                        <td>@item.PhoneNumber</td>
+                        <td>@item.InternalNumber</td>
+                        <td>@item.Email</td>
+                        <td>@item.Address</td>
+                        <td>@item.Position</td>
+                    </tr>
+
+                    counter++;
+                }
+            }
+        </tbody>
+    </table>
+
+
+
+
+</div>

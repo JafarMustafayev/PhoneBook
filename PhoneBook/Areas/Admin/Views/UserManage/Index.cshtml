@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+    int counter = 1;
+}
+
+
+@model List<SingleUserVM>
+
+<div class="mx-4">
+    <div style="display:flex; justify-content:space-between; align-items:center" class="mt-2">
+
+        <div>
+            <h1> User Management </h1>
+        </div>
+
+
+
+        <div>
+            <a asp-action="Create" asp-controller="UserManage">
+                <button class=" btn btn-info">
+                    <i class="bi bi-pencil-square"></i>
+                    Create
+                </button>
+            </a>
+        </div>
+    </div>
+    <hr>
+
+    <div>
+
+
+        <table class="table table-hover" style="lighting-color:blue;border:4px;--bs-table-hover-bg: #adb5bd">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Full Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                @if (Model != null)
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@counter</td>
+                            <td>@item.FullName</td>
+                            <td>@item.Username</td>
+                            <td>@item.Email</td>
+                            <td>@item.Role</td>
+                            <td>
+                                <a asp-action="delete" asp-controller="UserManage" asp-route-Id="@item.Id" id="deleteItem">
+                                    <button class="btn btn-danger">
+                                        <i class=" fas fa-trash-alt"></i>
+
+                                    </button>
+                                </a>
+                            </td>
+
+                        </tr>
+
+                        counter++;
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
